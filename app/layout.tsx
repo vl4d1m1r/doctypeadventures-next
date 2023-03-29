@@ -1,3 +1,4 @@
+import ReduxProvider from '@/redux-store/provider/ReduxProvider'
 import './globals.css'
 
 export const metadata = {
@@ -12,7 +13,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <header>
+          <h1>This is the layout</h1>
+        </header>
+        <ReduxProvider>
+          {children}
+        </ReduxProvider>
+      </body>
     </html>
   )
 }
