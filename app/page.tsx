@@ -5,6 +5,8 @@ import Categories from '@/components/Categories'
 import Tags from '@/components/Tags'
 import styles from './page.module.css'
 
+console.log('process.envX === ', process.env)
+
 async function getCategories() {
   const res = await fetch(`${process.env.API_ENDPOINT}categories`);
   return res.json();
@@ -24,7 +26,7 @@ export default async function Home() {
   store.dispatch(setCategories(categories))
   store.dispatch(setTags(tags))
 
-  console.log(categories, tags)
+  //console.log(categories, tags)
   return (
     <main className={styles.main}>
       <div className={styles.description}>
