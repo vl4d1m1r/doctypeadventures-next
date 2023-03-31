@@ -1,11 +1,10 @@
 import { store } from "@/redux-store/store";
 import { setCategories } from "@/redux-store/sliceCategories";
 import { setTags } from "@/redux-store/sliceTags";
+import Header from "@/components/Header";
 import Categories from '@/components/Categories'
 import Tags from '@/components/Tags'
 import styles from './page.module.css'
-
-console.log('process.envX === ', process.env)
 
 async function getCategories() {
   const res = await fetch(`${process.env.API_ENDPOINT}categories`);
@@ -28,12 +27,15 @@ export default async function Home() {
 
   //console.log(categories, tags)
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        Main APP!
-      </div>
-      <Categories />
-      <Tags />
-    </main>
+    <>
+      <Header dark={false} changeTheme={false} />
+      <main className={styles.main}>
+        <div className={styles.description}>
+          Main APP!
+        </div>
+        <Categories />
+        <Tags />
+      </main>
+    </>
   )
 }

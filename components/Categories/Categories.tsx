@@ -10,7 +10,7 @@ export default function Categories() {
                 <br /><br />
             </div>
             <div>
-                {data.map((category: any) => {
+                {data.map((category: { id: number, name: string }) => {
                     return (
                         <span key={category.id}>{category.name} | </span>
                     )

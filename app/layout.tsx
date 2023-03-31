@@ -14,9 +14,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <header>
-          <h1>This is the layout</h1>
-        </header>
         <ReduxProvider>
           {children}
         </ReduxProvider>
