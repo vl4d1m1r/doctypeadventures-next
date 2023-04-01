@@ -1,5 +1,5 @@
 import { posts } from "@/models/constants"
-import { CategoryType } from "@/types/system";
+import { CategoryType, TagType } from "@/types/system";
 
 export const extractUrlParams = (keys: string[], params: string[]) => {
     return keys.reduce((accumulator, key: string) => {
@@ -21,6 +21,16 @@ export const createApiEndpointFromUrlParams = (urlParams: { [key: string]: strin
     }, '')
 }
 
+export const findObjectInArrayById = (id: number, arrayOfObjects: TagType[]) => {
+    return arrayOfObjects.filter((object: TagType) => object.id === id)[0]
+}
+
+export const findMatchingObjectsInArrayFromArrayOfNumbers = (sourceArray: TagType[], targetArray: number[]) => {
+    return sourceArray.filter((tag: TagType) => {
+        return targetArray.includes(tag.id);
+    });
+}
+
 /**
  * Filter the "Uncategorized" "category"
  * @param {Array of Objects} categories - Categories data received from the
@@ -40,7 +50,6 @@ export const filterUncategorized = (categories: [CategoryType]) => {
  * Wordpress API.
  * @return {Array} - Array of strings (category names) with array indexes as
  * category IDs.
-
 export const categoriesToArray = (categories: CategoryType[]) => {
     if (!categories) return [];
     return categories.reduce(

@@ -14,15 +14,22 @@ import AccountTreeIcon from "@mui/icons-material/AccountTree";
 import MenuIcon from "@mui/icons-material/Menu";
 
 import Navigation from "@/components/Navigation";
-import Tags from "@/components/Tags";
+import Tags from "@/elements/Tags";
 import Logo from "@/elements/Logo";
+
+import { useSelector } from "react-redux";
+import type { TypedUseSelectorHook } from "react-redux";
+import { RootState } from "@/redux-store/store";
 
 // import { AppContext } from "context/Context";
 import { HeaderPropsType, DrawerStateType } from "@/types/components";
-import { classes } from "./header.styles";
+import { classes } from "./styles";
+
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 function Header({ dark, changeTheme }: HeaderPropsType) {
     // const { state, dispatch } = useContext(AppContext);
+    const tags = useAppSelector((state) => state.tagsData.data);
     const [isNavDrawerOpen, setIsNavDrawerOpen]: DrawerStateType =
         useState(false);
     const [isTagsDrawerOpen, setIsTagsDrawerOpen]: DrawerStateType =
@@ -76,7 +83,7 @@ function Header({ dark, changeTheme }: HeaderPropsType) {
                 onClose={() => setIsTagsDrawerOpen(!isTagsDrawerOpen)}
                 PaperProps={{ sx: classes.tagsDrawer }}
             >
-                <Tags />
+                <Tags tags={tags} />
             </Drawer>
         </>
     );

@@ -3,9 +3,9 @@ import { setCategories } from "@/redux-store/sliceCategories";
 import { setTags } from "@/redux-store/sliceTags";
 import ReduxProvider from '@/redux-store/provider/ReduxProvider'
 import SyncStoreWithClient from "@/redux-store/sync/SyncStoreWithClient";
+import PageWrapper from "@/elements/PageWrapper";
 import Header from "@/components/Header";
-// import Categories from '@/components/Categories'
-// import Tags from '@/components/Tags'
+import Hero from "@/components/Hero";
 import { filterUncategorized } from "@/utils/converters";
 import './globals.css'
 
@@ -43,10 +43,12 @@ export default async function RootLayout({
       <body>
         <ReduxProvider>
           <SyncStoreWithClient categories={categories} tags={tags} />
-          <Header dark={false} changeTheme={false} />
-          <main>
-            {children}
-          </main>
+          <PageWrapper>
+            <Header dark={false} changeTheme={false} />
+            <main>
+              {children}
+            </main>
+          </PageWrapper>
         </ReduxProvider>
       </body>
     </html>

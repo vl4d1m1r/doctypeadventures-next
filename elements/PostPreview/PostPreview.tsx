@@ -1,5 +1,6 @@
 'use client'
 import Link from "next/link";
+import parse from "html-react-parser";
 
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
@@ -9,20 +10,32 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import { CardActionArea, CardActions, Button } from "@mui/material";
 
+import Tags from "@/elements/Tags";
+
+import { useSelector } from "react-redux";
+import type { TypedUseSelectorHook } from "react-redux";
+import { RootState } from "@/redux-store/store";
+
 import { posts, social, website } from "@/models/constants";
 import { classes } from "./styles";
+import { findObjectInArrayById, findMatchingObjectsInArrayFromArrayOfNumbers } from "@/utils/converters";
+
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 const PostPreview = ({ post }: { post: any }) => {
+    const tags = useAppSelector((state) => state.tagsData.data);
+    const postTags = findMatchingObjectsInArrayFromArrayOfNumbers(tags, post.tags)
+    const categories = useAppSelector((state) => state.categoriesData.data);
+    const category = findObjectInArrayById(post.categories[0], categories)
     const slugPath = `/post/${post?.slug ?? ""}`;
     const imageUrl = post._embedded["wp:featuredmedia"][0];
-    /*
     const excerpt: any = parse(post.excerpt.rendered);
-    const excerpt: any = post.excerpt.rendered;
     const excerptFirstParagraph = excerpt[0].props.children;
     const excerptLimited =
         excerptFirstParagraph.slice(0, posts.excerptLimit) +
         (excerptFirstParagraph.length > posts.excerptLimit ? "..." : "");
-    */
+
+    // console.log("++++++>>> ", postTags, category, post.id, categories)
 
     return (
         <>
@@ -45,12 +58,12 @@ const PostPreview = ({ post }: { post: any }) => {
                             <Grid container spacing={2}>
                                 <Grid item xs={12}>
                                     <Typography variant='h4' sx={classes.postTitle}>
-                                        {/* parse(post.title.rendered) */}
+                                        {parse(post.title.rendered)}
                                     </Typography>
                                 </Grid>
                                 <Grid item xs={6} sx={classes.postCategoryGridItem}>
                                     <Typography variant='body1' sx={classes.postCategoryText}>
-                                        {/* categories[post.categories[0]] */}
+                                        {category.name}
                                     </Typography>
                                 </Grid>
                                 <Grid item xs={6} sx={classes.postDateGridItem}>
@@ -60,8 +73,7 @@ const PostPreview = ({ post }: { post: any }) => {
                                 </Grid>
                                 <Grid item xs={12}>
                                     <Typography variant='body1' color='text.secondary'>
-                                        excerptLimited
-                                        {/* excerptLimited */}
+                                        {excerptLimited}
                                     </Typography>
                                 </Grid>
                             </Grid>
@@ -69,9 +81,7 @@ const PostPreview = ({ post }: { post: any }) => {
                     </CardActionArea>
                 </Link>
                 <CardActions sx={classes.postPreviewCardActions}>
-                    {/*
-                    <Tags tags={tags} />
-                    */}
+                    <Tags tags={postTags} />
                 </CardActions>
             </Card>
         </>

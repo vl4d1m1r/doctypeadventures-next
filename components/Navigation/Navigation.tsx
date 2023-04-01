@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import type { TypedUseSelectorHook } from "react-redux";
 import { RootState, AppDispatch } from "@/redux-store/store";
 
-import { classes } from "./navigation.styles";
+import { classes } from "./styles";
 
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
