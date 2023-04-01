@@ -1,17 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-
-type TagType = {
-    id: number,
-    count: number,
-    description: string,
-    link: string,
-    name: string,
-    slug: string,
-    taxonomy: string,
-    parent: number
-}
-
+import { TagType } from '@/types/system';
 export interface TagsStateType {
     data: TagType[] | []
 }

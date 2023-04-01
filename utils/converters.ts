@@ -40,7 +40,7 @@ export const filterUncategorized = (categories: [CategoryType]) => {
  * Wordpress API.
  * @return {Array} - Array of strings (category names) with array indexes as
  * category IDs.
- */
+
 export const categoriesToArray = (categories: CategoryType[]) => {
     if (!categories) return [];
     return categories.reduce(
@@ -51,3 +51,4 @@ export const categoriesToArray = (categories: CategoryType[]) => {
         []
     );
 };
+*/

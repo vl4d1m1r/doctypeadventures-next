@@ -1,8 +1,8 @@
 export const api = {
     endpoint: "https://vl4di11ir.pw/doctypeadventures/wp-json/wp/v2/",
-    categoryEndpoint: "/page/1/categories/",
+    categoryEndpoint: "posts/page/1/categories/",
     searchEndpoint: "/page/1/search/",
-    tagsEndpoint: "/page/1/tags/",
+    tagsEndpoint: "posts/page/1/tags/",
 };
 
 export const website = {

@@ -6,7 +6,6 @@ import Typography from "@mui/material/Typography";
 import CircularProgress from "@mui/material/CircularProgress";
 
 import { api } from "@/models/constants";
-import { categoriesToArray } from "@/utils/converters";
 
 import { useDispatch, useSelector } from "react-redux";
 import type { TypedUseSelectorHook } from "react-redux";
@@ -20,7 +19,8 @@ function Navigation({ orientation }: { orientation: string }) {
     // const { filteringParameter } = useParams();
     const filteringParameter = 1
     const categories = useAppSelector((state) => state.categoriesData.data);
-    console.log('categories XXX === ', categories)
+
+    console.log('categories === ', categories)
 
     if (!categories.length) {
         return (
@@ -38,15 +38,15 @@ function Navigation({ orientation }: { orientation: string }) {
                     : classes.navigationVertical
             }
         >
-            {categories.map((category: { id: number, name: string }, index: number) => {
+            {categories.map((category: { id: number, name: string }) => {
                 return (
                     <Link
                         key={category.id}
                         className={
                             "nav-link-menu" +
-                            (Number(filteringParameter) === index ? " active" : "")
+                            (Number(filteringParameter) === category.id ? " active" : "")
                         }
-                        href={api.categoryEndpoint + index}
+                        href={api.categoryEndpoint + category.id}
                     >
                         <Typography variant='body1' sx={classes.navigationItem}>
                             {category.name}

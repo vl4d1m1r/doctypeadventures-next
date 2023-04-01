@@ -1,3 +1,25 @@
+type CategoryType = {
+    id: number,
+    count: number,
+    description: string,
+    link: string,
+    name: string,
+    slug: string,
+    taxonomy: string,
+    parent: number
+}
+
+type TagType = {
+    id: number,
+    count: number,
+    description: string,
+    link: string,
+    name: string,
+    slug: string,
+    taxonomy: string,
+    parent: number
+}
+
 export type MainPageDataType = {
     endPoint: string;
     currentPage?: string | number;

@@ -1,41 +1,14 @@
-import { store } from "@/redux-store/store";
-import { setCategories } from "@/redux-store/sliceCategories";
-import { setTags } from "@/redux-store/sliceTags";
-import Header from "@/components/Header";
-import Categories from '@/components/Categories'
-import Tags from '@/components/Tags'
 import styles from './page.module.css'
 
-async function getCategories() {
-  const res = await fetch(`${process.env.API_ENDPOINT}categories`);
-  return res.json();
-}
+export default function Home() {
 
-async function getTags() {
-  const res = await fetch(`${process.env.API_ENDPOINT}tags?per_page=100`);
-  return res.json();
-}
-
-export default async function Home() {
-  const categoriesData = getCategories();
-  const tagsData = getTags();
-
-  const [categories, tags] = await Promise.all([categoriesData, tagsData]);
-
-  store.dispatch(setCategories(categories))
-  store.dispatch(setTags(tags))
-
-  //console.log(categories, tags)
   return (
     <>
-      <Header dark={false} changeTheme={false} />
-      <main className={styles.main}>
+      <section id="home">
         <div className={styles.description}>
-          Main APP!
+          This is the main app mothafucka!!!!
         </div>
-        <Categories />
-        <Tags />
-      </main>
+      </section>
     </>
   )
 }
