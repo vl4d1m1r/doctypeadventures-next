@@ -4,7 +4,7 @@ export default function Loading() {
     return (
         <main className={styles.main}>
             <div className={styles.description}>
-                LOADING. . .
+                LOADING MAIN PAGE. . .
             </div>
         </main>
     )
