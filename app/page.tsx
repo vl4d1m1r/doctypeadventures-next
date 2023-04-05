@@ -1,14 +1,10 @@
+import Posts from '@/components/Posts';
 import styles from './page.module.css'
 
-export default function Home() {
-
+const Home = () => {
   return (
-    <>
-      <section id="home">
-        <div className={styles.description}>
-          This is the main app mothafucka!!!!
-        </div>
-      </section>
-    </>
+    <Posts postsEndpoint={"posts?_embed=&per_page=6&page=1&page=1&categories=4"} />
   )
 }
+
+export default Home
