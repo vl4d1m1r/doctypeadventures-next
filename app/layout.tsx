@@ -5,6 +5,7 @@ import ReduxProvider from '@/redux-store/provider/ReduxProvider'
 import SyncStoreWithClient from "@/redux-store/sync/SyncStoreWithClient";
 import PageWrapper from "@/elements/PageWrapper";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import { filterUncategorized } from "@/utils/converters";
 import './globals.css'
@@ -48,6 +49,7 @@ export default async function RootLayout({
             <main>
               {children}
             </main>
+            <Footer />
           </PageWrapper>
         </ReduxProvider>
       </body>
