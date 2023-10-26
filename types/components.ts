@@ -1,0 +1,1 @@
+export type PostParamsType = { page: number, categories?: number, tags?: number }
