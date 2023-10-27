@@ -1,6 +1,7 @@
 'use client'
 import useSWR from 'swr'
 import PostItem from '@/elements/PostItems/PostItem'
+import Pagination from '@/elements/Pagination'
 import { convertPropsToApiRoute } from '@/controllers/utils'
 import { postsFetcher } from '@/controllers/api'
 import { PostParamsType } from "@/types/components"
@@ -37,6 +38,7 @@ export default function Posts(props: PostParamsType) {
                     )
                 })}
             </div>
+            <Pagination currentPage={+props.page} totalPages={+data!.totalPages} filter={props} />
         </section>
     )
 }

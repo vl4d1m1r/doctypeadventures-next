@@ -2,7 +2,7 @@ import { API } from "@/models/constants"
 
 /* 
  * This function converts props object (eg. { page: '1', categories: '2' }) to
- * an API route (eg.  https://.../wp-json/wp/v2/posts/?_embed&slug=1&categories=2 )
+ * an API route (eg. https://.../wp-json/wp/v2/posts/?_embed&slug=1&categories=2 )
  * 
  */
 export const convertPropsToApiRoute = (props: {[key: string]: number}) => {
@@ -10,6 +10,20 @@ export const convertPropsToApiRoute = (props: {[key: string]: number}) => {
     const apiRoute = API.basePath + API.postsPath+ props.page
     return propsKeys.reduce((accumulator: string, key: string) => { 
         accumulator += key !== 'page' ? `&${key}=${props[key]}` : ''; 
+        return accumulator}, 
+    apiRoute)
+}
+
+/* 
+ * This function converts props object (eg. { page: '1', categories: '2' }) to
+ * local API route (eg. /posts/page/1/categories/2 )
+ * 
+ */
+export const convertPropsToLocalRoute = (props: {[key: string]: number}) => {
+    const propsKeys = Object.keys(props)
+    const apiRoute = API.localPostsPath + props.page
+    return propsKeys.reduce((accumulator: string, key: string) => { 
+        accumulator += key !== 'page' ? `/${key}/${props[key]}` : ''; 
         return accumulator}, 
     apiRoute)
 }
