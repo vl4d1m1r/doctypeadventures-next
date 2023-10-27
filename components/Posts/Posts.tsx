@@ -2,14 +2,14 @@
 import useSWR from 'swr'
 import PostItem from '@/elements/PostItems/PostItem'
 import { convertPropsToApiRoute } from '@/controllers/utils'
+import { postsFetcher } from '@/controllers/api'
 import { PostParamsType } from "@/types/components"
-
-const fetcher = (path: string) => fetch(path).then((res) => res.json())
 
 export default function Posts(props: PostParamsType) {
     console.log('[POSTS] props === ', props)
+
     const apiRoute = convertPropsToApiRoute(props)
-    const { data, error, isLoading } = useSWR(apiRoute, fetcher)
+    const { data, error, isLoading } = useSWR(apiRoute, postsFetcher)
 
     if (isLoading) { 
         return (
@@ -19,7 +19,7 @@ export default function Posts(props: PostParamsType) {
 
     if (error) {
         return (
-            <div>POSTS ARE FAILED MOTHA! THEY FAILEEED!</div>
+            <div>POSTS ARE FAILED MUTHA! THEY-RE FAILEEED!</div>
         )
     }
 
@@ -29,7 +29,7 @@ export default function Posts(props: PostParamsType) {
         <section>
             <div>
                 Posts:
-                {data.map((post: any) => {
+                {data!.posts.map((post: any) => {
                     return (
                         <div key={post.id}>
                            <PostItem post={post} />
