@@ -19,11 +19,7 @@ export default function ThemeToggler() {
 
   return (
     <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
-      {theme === "light" ? (
-        <MoonIcon className="h-6 w-6 text-black dark:text-white" />
-      ) : (
-        <SunIcon className="h-6 w-6 text-black dark:text-white" />
-      )}
+      {theme === "light" ? <MoonIcon className="icon-primary" /> : <SunIcon className="icon-primary" />}
     </button>
   );
 }
