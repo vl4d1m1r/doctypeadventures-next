@@ -1,6 +1,4 @@
 import { useRouter } from "next/navigation";
-import Box from "@mui/material/Box";
-import Slider from "@mui/material/Slider";
 import { convertPropsToLocalRoute } from "@/controllers/utils";
 import { PaginationPropsType } from "./types";
 
@@ -24,7 +22,9 @@ export default function Pagination({
   };
 
   return (
-    <Box display={"flex"}>
+    <div>
+      Pagination
+      {/*
       <Slider
         defaultValue={currentPage}
         valueLabelDisplay="auto"
@@ -34,6 +34,7 @@ export default function Pagination({
         max={totalPages}
         onChange={handlePageChange}
       />
-    </Box>
+    */}
+    </div>
   );
 }

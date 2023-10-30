@@ -1,13 +1,13 @@
-import Categories from '@/components/Categories'
-import Tags from '@/components/Tags'
-import styles from './page.module.css'
+import Tags from "@/elements/Tags";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <Categories />
+    <main>
       <br></br>
       <Tags />
+      <div className="text-black dark:text-white">
+        Theme is working, mutha??
+      </div>
     </main>
-  )
+  );
 }
