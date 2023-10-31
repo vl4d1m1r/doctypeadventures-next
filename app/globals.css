@@ -3,10 +3,52 @@
 @tailwind utilities;
 
 @layer components {
+  .wrapper {
+    @apply mx-auto max-w-screen-xl;
+  }
   .btn-primary {
-    @apply inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600;
+    @apply rounded text-sm p-2 border inline-flex items-center focus:outline-none focus:ring-2;
+  }
+  .btn-secondary {
+    @apply rounded text-sm p-2 inline-flex items-center focus:outline-none focus:ring-2;
+  }
+  .input-primary {
+    @apply rounded text-sm pl-10 p-2.5 border block w-full;
   }
   .icon-primary {
-    @apply h-6 w-6 text-black dark:text-white;
+    @apply h-6 w-6 text-gray-800 dark:text-gray-50;
+  }
+  .bg-primary {
+    @apply bg-gray-50 border-gray-300 border-b dark:bg-gray-800 dark:border-gray-700;
+  }
+  .bg-secondary {
+    @apply bg-blue-600 border-0 text-gray-50;
+  }
+  .el-color-primary {
+    @apply bg-gray-50 border border-gray-300 text-gray-800 focus:ring-blue-600 focus:border-blue-600 dark:bg-gray-800 dark:border-gray-700 dark:placeholder-gray-400 dark:text-gray-50 dark:focus:ring-blue-600 dark:focus:border-blue-500;
+  }
+  .text-color-primary {
+    @apply text-gray-800 dark:text-gray-50;
+  }
+  .text-color-secondary {
+    @apply text-gray-600 dark:text-gray-400;
+  }
+  .text-paragraph {
+    @apply font-sans text-base leading-6 tracking-normal antialiased;
+  }
+  .text-h4 {
+    @apply font-sans text-2xl font-semibold leading-snug tracking-normal antialiased;
+  }
+  .h-align {
+    @apply flex items-center space-x-4;
+  }
+  .image-copyright {
+    @apply absolute rounded top-4 right-4 text-xs px-2 py-1 text-gray-50 bg-black/50;
+  }
+  .category-small {
+    @apply px-4 py-2 bg-blue-600 text-gray-50 font-bold;
+  }
+  .tag-small {
+    @apply rounded text-xs px-2 py-1 mr-2 bg-blue-600 text-gray-50;
   }
 }

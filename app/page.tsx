@@ -1,13 +1,11 @@
-import Tags from "@/elements/Tags";
+import Tags from "@/components/Tags";
 
 export default function Home() {
   return (
-    <main>
+    <div>
       <br></br>
       <Tags />
-      <div className="text-black dark:text-white">
-        Theme is working, mutha??
-      </div>
-    </main>
+      <div className="text-black dark:text-white">Theme is working, mutha??</div>
+    </div>
   );
 }
