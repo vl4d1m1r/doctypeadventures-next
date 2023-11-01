@@ -1,40 +1,33 @@
 import { useRouter } from "next/navigation";
 import { convertPropsToLocalRoute } from "@/controllers/utils";
+import { setPaginationData } from "./models";
 import { PaginationPropsType } from "./types";
 
-export default function Pagination({
-  currentPage,
-  totalPages,
-  filter,
-}: PaginationPropsType) {
+export default function Pagination({ currentPage, totalPages, filter }: PaginationPropsType) {
   const router = useRouter();
-
-  const handlePageChange = (
-    event: Event,
-    value: number | number[],
-    activeThumb: number
-  ) => {
-    console.log("SLIDER PAGE NUMBER === ", value);
-    if (typeof value === "number") filter.page = value;
-    const localRoute = convertPropsToLocalRoute(filter);
-    console.log("SLIDER PAGE apiRoute === ", localRoute);
-    router.push(localRoute);
+  const paginationData = setPaginationData(currentPage, totalPages);
+  const handlePageChange = (value: number) => {
+    const filterAdjusted = { ...filter, page: value };
+    router.push(convertPropsToLocalRoute(filterAdjusted));
   };
 
   return (
-    <div>
-      Pagination
-      {/*
-      <Slider
-        defaultValue={currentPage}
-        valueLabelDisplay="auto"
-        step={1}
-        marks
-        min={1}
-        max={totalPages}
-        onChange={handlePageChange}
-      />
-    */}
-    </div>
+    <nav id="pagination" className="flex space-x-2 items-center justify-center">
+      {paginationData.map((item) => {
+        return (
+          <button
+            key={item.id}
+            onClick={() => handlePageChange(item.value)}
+            className={`${item.style} order-${item.order}`}
+            disabled={item.disabled}
+          >
+            <item.icon className="icon-primary" />
+          </button>
+        );
+      })}
+      <div className="px-6 order-3">
+        {currentPage} / {totalPages}
+      </div>
+    </nav>
   );
 }
