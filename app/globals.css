@@ -22,7 +22,7 @@
     @apply h-6 w-6 text-gray-800 dark:text-gray-50;
   }
   .bg-primary {
-    @apply bg-gray-50 border-gray-300 border-b dark:bg-gray-800 dark:border-gray-700;
+    @apply bg-gray-50 border-gray-300 dark:bg-gray-800 dark:border-gray-700;
   }
   .bg-secondary {
     @apply bg-blue-600 border-0 text-gray-50;
@@ -39,11 +39,17 @@
   .text-color-secondary {
     @apply text-gray-600 dark:text-gray-400;
   }
+  .text-small {
+    @apply font-sans text-sm leading-6 tracking-normal antialiased;
+  }
   .text-paragraph {
     @apply font-sans text-base leading-6 tracking-normal antialiased;
   }
   .text-h4 {
     @apply font-sans text-2xl font-semibold leading-snug tracking-normal antialiased;
+  }
+  .tooltip {
+    @apply el-color-primary pointer-events-none h-auto p-2 absolute -top-12 left-0 w-max opacity-0 transition-opacity group-hover:opacity-100;
   }
   .h-align {
     @apply flex items-center space-x-4;

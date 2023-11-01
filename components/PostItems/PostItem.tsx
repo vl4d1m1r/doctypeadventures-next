@@ -1,5 +1,5 @@
 import Tags from "@/components/Tags";
-import Image from "next/image";
+import PostImage from "@/components/PostImage";
 import parse from "html-react-parser";
 import { ExtractPostData } from "@/controllers/utils";
 import { PostItemType } from "@/types/components";
@@ -12,17 +12,7 @@ export default function PostItem({ post }: { post: PostItemType }) {
   return (
     <div className="bg-primary h-full relative flex flex-col rounded-xl shadow-md">
       <picture>
-        <Image
-          src={imageData.source_url}
-          alt={imageData.title.rendered}
-          sizes="100vw"
-          style={{
-            width: "100%",
-            height: "auto",
-          }}
-          width={500}
-          height={300}
-        />
+        <PostImage imageData={imageData} />
         <div className="image-copyright">{imageData.title.rendered}</div>
       </picture>
       <div className="p-6">

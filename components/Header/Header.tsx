@@ -11,7 +11,7 @@ import logoTextDark from "@/public/assets/images/bitmap/logo-doctype-text-dark.p
 export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-10">
-      <nav className="h-20 bg-primary">
+      <nav className="h-20 bg-primary border-b">
         <div className="h-20 wrapper flex items-center flex-wrap justify-between">
           <div className="h-align lg:order-1">
             <div className="lg:hidden">

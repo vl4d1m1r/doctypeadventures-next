@@ -25,14 +25,14 @@ export default function Posts(props: PostParamsType) {
 
   return (
     <>
-      <div className="flex flex-col my-4 gap-4 lg:gap-8 lg:grid lg:grid-cols-3">
+      <section id="posts" className="flex flex-col my-4 gap-4 lg:gap-8 lg:grid lg:grid-cols-3">
         {data!.posts.map((post: any, index: number) => {
           if (index === 0) {
             return <PostHero key={post.id} post={post} />;
           }
           return <PostItem key={post.id} post={post} />;
         })}
-      </div>
+      </section>
       <Pagination currentPage={+props.page} totalPages={+data!.totalPages} filter={props} />
     </>
   );

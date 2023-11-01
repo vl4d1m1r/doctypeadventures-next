@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { ThemeProvider } from "./theme-provider";
 import "./globals.css";
 
@@ -13,10 +14,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div>
+          <>
             <Header />
-            <main className="mt-20">{children}</main>
-          </div>
+            <main className="wrapper mt-20 py-4">{children}</main>
+            <Footer />
+          </>
         </ThemeProvider>
       </body>
     </html>
