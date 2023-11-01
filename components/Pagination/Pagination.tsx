@@ -18,7 +18,7 @@ export default function Pagination({ currentPage, totalPages, filter }: Paginati
           <button
             key={item.id}
             onClick={() => handlePageChange(item.value)}
-            className={`${item.style} order-${item.order}`}
+            className={item.style}
             disabled={item.disabled}
           >
             <item.icon className="icon-primary" />
