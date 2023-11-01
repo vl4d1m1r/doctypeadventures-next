@@ -1,18 +1,18 @@
-const postsPerPage = 6
-const tagsPerPage = 100
+const postsPerPage = 7;
+const tagsPerPage = 100;
 
 export const API = {
-    basePath: 'https://vl4di11ir.pw/doctypeadventures/wp-json/wp/v2/',
-    postsPath: `posts?_embed&per_page=${postsPerPage}&page=`,
-    localPostsPath: "/posts/page/",
-    postPath: "posts/?_embed&slug=",
-    appPath: "http://localhost:3000/",
-    categoriesPath: "posts/page/1/categories/",
-    categoriesSwrKey: 'categories',
-    tagsPath: "posts/page/1/tags/",
-    tagsSwrKey: `tags?per_page=${tagsPerPage}`
-}
+  basePath: "https://vl4di11ir.pw/doctypeadventures/wp-json/wp/v2/",
+  postsPath: `posts?_embed&per_page=${postsPerPage}&page=`,
+  localPostsPath: "/posts/page/",
+  postPath: "posts/?_embed&slug=",
+  appPath: "http://localhost:3000/",
+  categoriesPath: "posts/page/1/categories/",
+  categoriesSwrKey: "categories",
+  tagsPath: "posts/page/1/tags/",
+  tagsSwrKey: `tags?per_page=${tagsPerPage}`,
+};
 
 export const settings = {
-    postsPerPage
-}
+  postsPerPage,
+};

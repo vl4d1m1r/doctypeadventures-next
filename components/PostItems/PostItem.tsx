@@ -1,12 +1,11 @@
 import Tags from "@/components/Tags";
 import Image from "next/image";
 import parse from "html-react-parser";
+import { ExtractPostData } from "@/controllers/utils";
+import { PostItemType } from "@/types/components";
 
-export default function PostItem({ post }: { post: any }) {
-  const imageData = post._embedded["wp:featuredmedia"][0];
-  const excerpt: any = parse(post.excerpt.rendered);
-  const excerptFirstParagraph = excerpt[0].props.children;
-  const excerptLimited = excerptFirstParagraph.slice(0, 250) + (excerptFirstParagraph.length > 250 ? "..." : "");
+export default function PostItem({ post }: { post: PostItemType }) {
+  const { imageData, excerptLimited } = ExtractPostData(post);
 
   console.log("POST ITEM post === ", post);
 
