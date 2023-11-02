@@ -11,8 +11,8 @@ export default function LoadingPage() {
         })}
       </div>
       <Modal>
-        <div className="flex flex-col space-y-4">
-          <div>Loading Mutha... Loading!</div>
+        <div className="flex flex-col items-center space-y-4">
+          <div className="text-sm">LOADING MUTHA... LOADING!</div>
           <div className="animate-bounce">ヽ༼ ຈل͜ຈ༼ ▀̿̿Ĺ̯̿̿▀̿ ̿༽Ɵ͆ل͜Ɵ͆ ༽ﾉ</div>
         </div>
       </Modal>
