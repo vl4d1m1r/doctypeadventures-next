@@ -1,10 +1,13 @@
 import Image from "next/image";
+import { appData } from "@/models/constants";
 import { ImageDataType } from "@/types/components";
 
 export default function PostImage({ imageData }: { imageData: ImageDataType }) {
   return (
     <picture id="post-image">
       <Image
+        placeholder="blur"
+        blurDataURL={appData.blurDataImage /* Dummy blur data image, sorry */}
         src={imageData.source_url}
         alt={imageData.title.rendered}
         sizes="100vw"

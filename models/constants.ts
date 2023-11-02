@@ -22,10 +22,13 @@ export const settings = {
 
 export const appData = {
   name: "<!DoctypeAdventures>",
-  // version: publicRuntimeConfig?.version || "0.0", deprecated in app router
+  // Version: publicRuntimeConfig?.version || "0.0", deprecated in app router
   version: "6.0.1",
   author: "Vladimir Jankovic",
   githubRepo: "https://github.com/vl4d1m1r",
+  // Dummy blur data image, sorry
+  blurDataImage:
+    "data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q==",
 };
 
 export const texts = {
