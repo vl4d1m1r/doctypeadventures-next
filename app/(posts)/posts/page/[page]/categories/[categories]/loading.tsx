@@ -1,9 +1,5 @@
-export default function Error() {
-    return (
-        <>
-            <div>
-            [CATEGORY] LOADING MAN... LOADING!!!!!
-            </div>
-        </>
-    )
+import LoadingPage from "@/components/LoadingPage";
+
+export default function Loading() {
+  return <LoadingPage />;
 }

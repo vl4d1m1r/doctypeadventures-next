@@ -6,7 +6,7 @@ import { ExtractPostData } from "@/controllers/utils";
 import { PostType } from "@/types/components";
 
 export default function PostHero({ post }: { post: PostType }) {
-  const { imageData, excerptLimited } = ExtractPostData(post);
+  const { imageData, excerptLimited } = ExtractPostData(post, 800);
 
   return (
     <>
@@ -26,8 +26,8 @@ export default function PostHero({ post }: { post: PostType }) {
             <div>{post.date.substring(0, 10)}</div>
           </div>
           <div className="text-paragraph text-color-secondary block mt-6">
-            {parse(post.excerpt.rendered)}
-            <Link href={`/post/${post.slug}`} className="link">
+            {excerptLimited}
+            <Link href={`/post/${post.slug}`} className="link ml-2">
               Read more {">>"}
             </Link>
           </div>

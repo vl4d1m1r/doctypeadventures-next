@@ -3,6 +3,8 @@ import useSWR from "swr";
 import PostHero from "./elements/PostHero";
 import PostPreview from "./elements/PostPreview";
 import Pagination from "./elements/Pagination";
+import ScrollToTop from "./elements/ScrollToTop";
+import LoadingPage from "@/components/LoadingPage";
 import { convertPropsToApiRoute } from "@/controllers/utils";
 import { postsFetcher } from "@/controllers/api";
 import { PostParamsType, PostType } from "@/types/components";
@@ -13,9 +15,7 @@ export default function Posts(props: PostParamsType) {
   const apiRoute = convertPropsToApiRoute(props);
   const { data, error, isLoading } = useSWR(apiRoute, postsFetcher);
 
-  if (isLoading) {
-    return <div>POSTS ARE LOADIIIIING MUTHA!!!!</div>;
-  }
+  if (isLoading) return <LoadingPage />;
 
   if (error) {
     return <div>POSTS ARE FAILED MUTHA! THEY-RE FAILEEED!</div>;
@@ -25,6 +25,8 @@ export default function Posts(props: PostParamsType) {
 
   return (
     <>
+      {/* Unfortunately, even Next 14 require ScrollToTop for 100% scroll to top every time the page is turned */}
+      <ScrollToTop />
       <div className="flex flex-col my-4 gap-4 lg:gap-8 lg:grid lg:grid-cols-3">
         {data!.posts.map((post: PostType, index: number) => {
           if (index === 0) {

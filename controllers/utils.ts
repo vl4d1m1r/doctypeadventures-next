@@ -30,10 +30,11 @@ export const convertPropsToLocalRoute = (props: { [key: string]: number }) => {
   }, apiRoute);
 };
 
-export const ExtractPostData = (post: PostType) => {
+export const ExtractPostData = (post: PostType, excerptLimit: number = 250) => {
   const imageData = post._embedded["wp:featuredmedia"][0];
   const excerpt: any = parse(post.excerpt.rendered);
   const excerptFirstParagraph = excerpt[0].props.children;
-  const excerptLimited = excerptFirstParagraph.slice(0, 250) + (excerptFirstParagraph.length > 250 ? "..." : "");
+  const excerptLimited =
+    excerptFirstParagraph.slice(0, excerptLimit) + (excerptFirstParagraph.length > excerptLimit ? "..." : "");
   return { imageData, excerptLimited };
 };
