@@ -2,6 +2,7 @@
 import useSWR from "swr";
 import Link from "next/link";
 import { API } from "@/models/constants";
+import { TagType } from "@/types/components";
 import { fetcher } from "@/controllers/api";
 
 export default function Tags({ tagIds }: { tagIds?: number[] }) {
@@ -27,7 +28,7 @@ export default function Tags({ tagIds }: { tagIds?: number[] }) {
 
   return (
     <>
-      {tags.map((tag: any) => {
+      {tags.map((tag: TagType) => {
         if (tag.count) {
           return (
             <Link key={tag.id} href={API.appPath + API.tagsPath + tag.id} className={tagClass}>

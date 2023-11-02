@@ -1,13 +1,12 @@
-import Post from "@/components/Post"
+import Post from "@/components/Post";
 
-const PostRoute = ({ params }: { params: {postId: string } }) => {
-    console.log('[POST] params === ', params)
-    return (
-        <>
-            <div>[POST] Route === {params.postId}</div>
-            <Post postId={params.postId} />
-        </>
-    )
-}
+const PostRoute = ({ params }: { params: { postId: string } }) => {
+  console.log("[POST] params === ", params);
+  return (
+    <section id="post">
+      <Post postId={params.postId} />
+    </section>
+  );
+};
 
-export default PostRoute
+export default PostRoute;

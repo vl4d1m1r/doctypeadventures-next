@@ -7,13 +7,13 @@
     @apply mx-auto max-w-screen-xl;
   }
   .btn-primary {
-    @apply rounded text-sm p-2 border inline-flex items-center focus:outline-none focus:ring-2;
+    @apply rounded text-sm justify-center p-2 inline-flex items-center focus:outline-none focus:ring-2 border;
   }
   .btn-secondary {
-    @apply rounded text-sm p-2 inline-flex items-center focus:outline-none focus:ring-2;
+    @apply rounded text-sm justify-center p-2 inline-flex items-center focus:outline-none focus:ring-2;
   }
   .btn-circle {
-    @apply rounded-full text-sm p-2 border inline-flex items-center focus:outline-none focus:ring-2;
+    @apply rounded-full text-sm justify-center p-2 inline-flex items-center focus:outline-none focus:ring-2 border;
   }
   .input-primary {
     @apply rounded text-sm pl-10 p-2.5 border block w-full;
@@ -25,13 +25,13 @@
     @apply bg-gray-50 border-gray-300 dark:bg-gray-800 dark:border-gray-700;
   }
   .bg-secondary {
-    @apply bg-blue-600 border-0 text-gray-50;
+    @apply border-0 bg-blue-600 text-gray-50;
   }
   .el-color-primary {
-    @apply bg-gray-200 border border-gray-300 text-gray-800 focus:ring-blue-600 focus:border-blue-600 dark:bg-gray-800 dark:border-gray-700 dark:placeholder-gray-400 dark:text-gray-50 dark:focus:ring-blue-600 dark:focus:border-blue-500 disabled:opacity-25;
+    @apply border bg-gray-200 border-gray-300 text-gray-800 focus:ring-blue-600 focus:border-blue-600 dark:bg-gray-800 dark:border-gray-700 dark:placeholder-gray-400 dark:text-gray-50 dark:focus:ring-blue-600 dark:focus:border-blue-500 disabled:opacity-25;
   }
   .el-color-secondary {
-    @apply bg-gray-50 border border-gray-200 text-gray-800 focus:ring-blue-600 focus:border-blue-600 dark:bg-gray-900 dark:border-gray-800 dark:placeholder-gray-400 dark:text-gray-50 dark:focus:ring-blue-600 dark:focus:border-blue-500 disabled:opacity-25;
+    @apply border bg-green-800 border-green-100 text-gray-50 focus:ring-green-600 focus:border-green-600 disabled:opacity-25;
   }
   .text-color-primary {
     @apply text-gray-800 dark:text-gray-50;
@@ -40,16 +40,22 @@
     @apply text-gray-600 dark:text-gray-400;
   }
   .text-small {
-    @apply font-sans text-sm leading-6 tracking-normal antialiased;
+    @apply text-sm font-sans leading-6 tracking-normal antialiased;
   }
   .text-paragraph {
-    @apply font-sans text-base leading-6 tracking-normal antialiased;
+    @apply text-base font-sans leading-6 tracking-normal antialiased;
   }
-  .text-h4 {
-    @apply font-sans text-2xl font-semibold leading-snug tracking-normal antialiased;
+  .text-big {
+    @apply text-6xl font-sans font-semibold leading-snug tracking-normal antialiased;
+  }
+  .text-giant {
+    @apply text-8xl font-sans font-semibold leading-snug tracking-normal antialiased;
   }
   .tooltip {
     @apply el-color-primary pointer-events-none h-auto p-2 absolute -top-12 left-0 w-max opacity-0 transition-opacity group-hover:opacity-100;
+  }
+  .link {
+    @apply text-green-700 font-bold hover:underline;
   }
   .h-align {
     @apply flex items-center space-x-4;
@@ -62,5 +68,47 @@
   }
   .tag-small {
     @apply rounded text-xs px-2 py-1 mr-2 bg-blue-600 text-gray-50;
+  }
+  .post-date {
+    @apply text-blue-600 font-bold;
+  }
+}
+
+@layer base {
+  h1 {
+    @apply text-5xl font-sans font-semibold leading-snug tracking-normal antialiased;
+  }
+  h2 {
+    @apply text-4xl font-sans font-semibold leading-snug tracking-normal antialiased;
+  }
+  h3 {
+    @apply text-3xl font-sans font-semibold leading-snug tracking-normal antialiased;
+  }
+  h4 {
+    @apply text-2xl font-sans font-semibold leading-snug tracking-normal antialiased;
+  }
+  p,
+  ul,
+  li {
+    margin-block-end: 16px;
+    margin-block-start: 16px;
+    margin-inline-end: 0px;
+    margin-inline-start: 0px;
+  }
+  ul {
+    list-style: inside;
+    padding-inline-start: 40px;
+  }
+  pre {
+    @apply rounded-md p-4 bg-black text-gray-50;
+  }
+  em {
+    @apply px-1 bg-slate-800 text-green-500;
+  }
+  figure img {
+    width: 100%;
+  }
+  figcaption {
+    @apply text-sm text-center mt-2 text-color-secondary;
   }
 }

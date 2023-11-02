@@ -10,11 +10,7 @@ export default function PostImage() {
         <div className="flex flex-col space-y-4 mb-6 lg:mb-0">
           <div>{texts.copyrightNotice}</div>
           <div>{texts.license}</div>
-          <Link
-            href={appData.githubRepo}
-            target="_blank"
-            className="flex btn-primary justify-center w-60 bg-green-900 text-white"
-          >
+          <Link href={appData.githubRepo} target="_blank" className="btn-primary el-color-secondary w-60">
             Check it out at my <Image src={githubSvg} alt="github icon" className="mx-2" /> repo!
           </Link>
         </div>

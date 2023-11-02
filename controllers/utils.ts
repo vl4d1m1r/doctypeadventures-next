@@ -1,5 +1,5 @@
 import { API } from "@/models/constants";
-import { PostItemType } from "@/types/components";
+import { PostType } from "@/types/components";
 import parse from "html-react-parser";
 
 /*
@@ -30,7 +30,7 @@ export const convertPropsToLocalRoute = (props: { [key: string]: number }) => {
   }, apiRoute);
 };
 
-export const ExtractPostData = (post: PostItemType) => {
+export const ExtractPostData = (post: PostType) => {
   const imageData = post._embedded["wp:featuredmedia"][0];
   const excerpt: any = parse(post.excerpt.rendered);
   const excerptFirstParagraph = excerpt[0].props.children;

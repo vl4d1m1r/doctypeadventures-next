@@ -1,11 +1,11 @@
 "use client";
 import useSWR from "swr";
-import PostItem from "@/components/PostItems/PostItem";
-import PostHero from "../PostHero";
-import Pagination from "@/components/Pagination";
+import PostHero from "./elements/PostHero";
+import PostPreview from "./elements/PostPreview";
+import Pagination from "./elements/Pagination";
 import { convertPropsToApiRoute } from "@/controllers/utils";
 import { postsFetcher } from "@/controllers/api";
-import { PostParamsType } from "@/types/components";
+import { PostParamsType, PostType } from "@/types/components";
 
 export default function Posts(props: PostParamsType) {
   console.log("[POSTS] props === ", props);
@@ -25,14 +25,14 @@ export default function Posts(props: PostParamsType) {
 
   return (
     <>
-      <section id="posts" className="flex flex-col my-4 gap-4 lg:gap-8 lg:grid lg:grid-cols-3">
-        {data!.posts.map((post: any, index: number) => {
+      <div className="flex flex-col my-4 gap-4 lg:gap-8 lg:grid lg:grid-cols-3">
+        {data!.posts.map((post: PostType, index: number) => {
           if (index === 0) {
             return <PostHero key={post.id} post={post} />;
           }
-          return <PostItem key={post.id} post={post} />;
+          return <PostPreview key={post.id} post={post} />;
         })}
-      </section>
+      </div>
       <Pagination currentPage={+props.page} totalPages={+data!.totalPages} filter={props} />
     </>
   );

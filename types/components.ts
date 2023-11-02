@@ -5,12 +5,31 @@ export type ImageDataType = {
   title: { rendered: string };
 };
 
-export type PostItemType = {
+export type PostType = {
+  id: number;
+  author: number;
+  slug: string;
+  featured_media: number;
+  link: string;
   excerpt: { rendered: string };
   title: { rendered: string };
   date: string;
+  modified: string;
   tags: number[];
+  type: string;
   _embedded: {
     "wp:featuredmedia": [{ imageData: ImageDataType; source_url: string; title: { rendered: string } }];
   };
+};
+
+export type CategoryType = {
+  id: number;
+  name: string;
+  count: number;
+};
+
+export type TagType = {
+  id: number;
+  name: string;
+  count: number;
 };

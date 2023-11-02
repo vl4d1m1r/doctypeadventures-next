@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import Categories from "../Categories";
+import Categories from "@/components/Categories";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 

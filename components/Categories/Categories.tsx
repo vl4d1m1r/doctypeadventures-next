@@ -1,6 +1,7 @@
 "use client";
 import useSWR from "swr";
 import Link from "next/link";
+import { CategoryType } from "@/types/components";
 import { API } from "@/models/constants";
 
 const fetcher = (path: string) => fetch(API.basePath + path).then((res) => res.json());
@@ -20,7 +21,7 @@ export default function Categories() {
 
   return (
     <div className="flex flex-row font-medium space-x-8 mt-0">
-      {data.map((category: any) => {
+      {data.map((category: CategoryType) => {
         if (category.count) {
           return (
             <div key={category.id}>
