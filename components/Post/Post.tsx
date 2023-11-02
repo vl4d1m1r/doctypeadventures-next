@@ -1,6 +1,7 @@
 "use client";
 import useSWR from "swr";
-import LoadingPage from "@/components/LoadingPage";
+import { reports } from "@/models/constants";
+import Report from "@/components/Report";
 import Tags from "@/components/Tags";
 import ScrollToTop from "../Posts/elements/ScrollToTop";
 import PostImage from "../Posts/elements/PostImage";
@@ -14,13 +15,10 @@ export default function Post({ postId }: { postId: string }) {
   const apiRoute = API.basePath + API.postPath + postId;
   const { data, error, isLoading } = useSWR(apiRoute, fetcher);
 
-  if (isLoading) return <LoadingPage />;
+  if (isLoading) return <Report report={reports.loading} />;
 
-  if (error) {
-    return <div>POST FAILED MUTHA! IT FAILEEED!</div>;
-  }
+  if (error) return <Report report={reports.error} />;
 
-  console.log("[POST] data === ", data);
   const post = data[0];
   const { imageData } = ExtractPostData(post);
 

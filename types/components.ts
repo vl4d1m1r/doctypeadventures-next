@@ -33,3 +33,15 @@ export type TagType = {
   name: string;
   count: number;
 };
+
+export type ReportPropType = {
+  type: string;
+  messages: string[];
+  animation: string;
+};
+
+export enum ReportTypes {
+  LOADING = "loading",
+  ERROR = "error",
+  NOT_FOUND = "notFound",
+}

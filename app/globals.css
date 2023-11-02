@@ -100,7 +100,7 @@
     padding-inline-start: 40px;
   }
   pre {
-    @apply rounded-md p-4 bg-black text-gray-50;
+    @apply rounded-md p-4 bg-black text-gray-50 overflow-auto;
   }
   em {
     @apply px-1 bg-slate-800 text-green-500;

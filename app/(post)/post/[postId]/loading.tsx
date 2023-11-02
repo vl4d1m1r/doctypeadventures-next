@@ -1,5 +1,6 @@
-import LoadingPage from "@/components/LoadingPage";
+import { reports } from "@/models/constants";
+import Report from "@/components/Report";
 
 export default function Loading() {
-  return <LoadingPage />;
+  return <Report report={reports.loading} />;
 }

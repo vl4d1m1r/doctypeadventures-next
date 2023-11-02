@@ -1,11 +1,7 @@
-'use client'
+"use client";
+import { reports } from "@/models/constants";
+import Report from "@/components/Report";
 
 export default function Error() {
-    return (
-        <>
-            <div>
-                [PAGE] THERE IS AN ERROR IN REACHING THIS POST MUTHAFUCKA!!!
-            </div>
-        </>
-    )
+  return <Report report={reports.error} />;
 }

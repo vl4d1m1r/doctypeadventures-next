@@ -17,7 +17,7 @@ export default function PostHero({ post }: { post: PostType }) {
         </picture>
       </div>
       <div>
-        <div className="mb-4 lg:mb-0">
+        <div className="mb-2 mx-4 lg:mb-0 lg:ml-0">
           <Link href={`/post/${post.slug}`} className="hover:underline">
             <h4 className="text-color-primary block">{parse(post.title.rendered)}</h4>
           </Link>

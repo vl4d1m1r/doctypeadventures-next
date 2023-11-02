@@ -4,24 +4,19 @@ import PostHero from "./elements/PostHero";
 import PostPreview from "./elements/PostPreview";
 import Pagination from "./elements/Pagination";
 import ScrollToTop from "./elements/ScrollToTop";
-import LoadingPage from "@/components/LoadingPage";
+import { reports } from "@/models/constants";
+import Report from "@/components/Report";
 import { convertPropsToApiRoute } from "@/controllers/utils";
 import { postsFetcher } from "@/controllers/api";
 import { PostParamsType, PostType } from "@/types/components";
 
 export default function Posts(props: PostParamsType) {
-  console.log("[POSTS] props === ", props);
-
   const apiRoute = convertPropsToApiRoute(props);
   const { data, error, isLoading } = useSWR(apiRoute, postsFetcher);
 
-  if (isLoading) return <LoadingPage />;
+  if (isLoading) return <Report report={reports.loading} />;
 
-  if (error) {
-    return <div>POSTS ARE FAILED MUTHA! THEY-RE FAILEEED!</div>;
-  }
-
-  console.log("[POSTS] data === ", data);
+  if (error) return <Report report={reports.error} />;
 
   return (
     <>
