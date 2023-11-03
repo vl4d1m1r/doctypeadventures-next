@@ -9,6 +9,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
+        <FacebookIntegration />
         <GoogleIntegration />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <>
@@ -17,7 +18,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Footer />
           </>
         </ThemeProvider>
-        <FacebookIntegration />
       </body>
     </html>
   );
