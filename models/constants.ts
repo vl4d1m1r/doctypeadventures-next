@@ -14,6 +14,7 @@ export const API = {
   categoriesSwrKey: "categories",
   tagsPath: "posts/page/1/tags/",
   tagsSwrKey: `tags?per_page=${tagsPerPage}`,
+  searchPath: "posts/page/1/search/",
 };
 
 export const settings = {
@@ -21,7 +22,7 @@ export const settings = {
 };
 
 export const appData = {
-  name: "<!DoctypeAdventures>",
+  name: "<!DOCTYPE Adventures>",
   // Version: publicRuntimeConfig?.version || "0.0", deprecated in app router
   version: "6.0.1",
   author: "Vladimir Jankovic",
@@ -52,5 +53,10 @@ export const reports = {
     type: "notFound",
     messages: ["WHAT YOU SEARCHIN' FOR...", "IS NOT FOUND, MUTHA!"],
     animation: `¯${String.fromCharCode(92)}_(ツ)_/¯`,
+  },
+  empty: {
+    type: "empty",
+    messages: ["PAGE IS BLANK! IT'S NOTHING THERE!!", "I'M SCARED MUTHA!!"],
+    animation: `(╯°□°)╯`,
   },
 };

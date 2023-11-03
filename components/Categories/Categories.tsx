@@ -16,8 +16,6 @@ export default function Categories() {
     return <div>CATEGORIES ARE FAILED MUTHA! THEY-RE FAILEEED!</div>;
   }
 
-  console.log("DATA === ", data);
-
   return (
     <div className="flex flex-row font-medium space-x-8 mt-0">
       {data.map((category: CategoryType) => {

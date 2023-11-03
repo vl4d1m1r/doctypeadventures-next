@@ -15,7 +15,6 @@ export default function Tags({ tagIds }: { tagIds?: number[] }) {
     return <div>TAGS ARE FAILED MUTHA! THEY-RE FAILEEED!</div>;
   }
 
-  console.log("DATA === ", data);
   let tags = data;
   let tagClass = "";
   if (tagIds?.length) {

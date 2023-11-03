@@ -18,9 +18,6 @@
   .input-primary {
     @apply rounded text-sm pl-10 p-2.5 border block w-full;
   }
-  .icon-primary {
-    @apply h-6 w-6 text-gray-800 dark:text-gray-50;
-  }
   .bg-primary {
     @apply bg-gray-50 border-gray-300 dark:bg-gray-800 dark:border-gray-700;
   }
@@ -42,14 +39,26 @@
   .text-small {
     @apply text-sm font-sans leading-6 tracking-normal antialiased;
   }
-  .text-paragraph {
+  .text-medium {
     @apply text-base font-sans leading-6 tracking-normal antialiased;
   }
-  .text-big {
+  .text-large {
     @apply text-6xl font-sans font-semibold leading-snug tracking-normal antialiased;
   }
   .text-giant {
     @apply text-8xl font-sans font-semibold leading-snug tracking-normal antialiased;
+  }
+  .icon-small {
+    @apply h-4 w-4;
+  }
+  .icon-medium {
+    @apply h-6 w-6;
+  }
+  .icon-large {
+    @apply h-8 w-8;
+  }
+  .icon-xl {
+    @apply h-10 w-10;
   }
   .tooltip {
     @apply el-color-primary pointer-events-none h-auto p-2 absolute -top-12 left-0 w-max opacity-0 transition-opacity group-hover:opacity-100;

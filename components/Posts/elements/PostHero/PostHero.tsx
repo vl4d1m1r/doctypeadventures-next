@@ -25,13 +25,13 @@ export default function PostHero({ post }: { post: PostType }) {
             <div className="category-small">Coding</div>
             <div>{post.date.substring(0, 10)}</div>
           </div>
-          <div className="text-paragraph text-color-secondary block mt-6">
+          <div className="text-medium text-color-secondary block mt-6">
             {excerptLimited}
             <Link href={`/post/${post.slug}`} className="link ml-2">
               Read more {">>"}
             </Link>
           </div>
-          <div className="flex items-center mt-6 text-paragraph">
+          <div className="flex items-center mt-6 text-medium">
             <Tags tagIds={post.tags} />
           </div>
         </div>

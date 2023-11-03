@@ -1,13 +1,10 @@
 import Posts from "@/components/Posts";
 import { PostParamsType } from "@/types/components";
 
-const CategoriesRoute = ({ params }: { params: PostParamsType }) => {
-  console.log("[CATEGORIES] params === ", params);
+export default function CategoriesRoute({ params }: { params: PostParamsType }) {
   return (
-    <section id="posts">
+    <section id="posts-categories">
       <Posts page={params.page} categories={params.categories} />
     </section>
   );
-};
-
-export default CategoriesRoute;
+}

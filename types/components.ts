@@ -1,4 +1,4 @@
-export type PostParamsType = { page: number; categories?: number; tags?: number };
+export type PostParamsType = { page: number; categories?: number; tags?: number; search?: string };
 
 export type ImageDataType = {
   source_url: string;
@@ -44,4 +44,5 @@ export enum ReportTypes {
   LOADING = "loading",
   ERROR = "error",
   NOT_FOUND = "notFound",
+  EMPTY = "empty",
 }

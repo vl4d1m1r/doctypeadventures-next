@@ -7,7 +7,7 @@ export default function Report({ report }: { report: ReportPropType }) {
     <>
       {report.type === ReportTypes.LOADING ? (
         <div className="flex flex-col my-4 items-center gap-4 lg:gap-8 lg:grid lg:grid-cols-3">
-          {[...Array(6)].map((index) => {
+          {[...Array(6)].map((value, index) => {
             // In this case of repeating same n elements it is allowed to use index as a key
             return <PostSkeleton key={index} />;
           })}

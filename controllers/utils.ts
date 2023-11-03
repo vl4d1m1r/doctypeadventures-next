@@ -7,7 +7,7 @@ import parse from "html-react-parser";
  * an API route (eg. https://.../wp-json/wp/v2/posts/?_embed&slug=1&categories=2 )
  *
  */
-export const convertPropsToApiRoute = (props: { [key: string]: number }) => {
+export const convertPropsToApiRoute = (props: { [key: string]: number | string }) => {
   const propsKeys = Object.keys(props);
   const apiRoute = API.basePath + API.postsPath + props.page;
   return propsKeys.reduce((accumulator: string, key: string) => {
@@ -21,7 +21,7 @@ export const convertPropsToApiRoute = (props: { [key: string]: number }) => {
  * local API route (eg. /posts/page/1/categories/2 )
  *
  */
-export const convertPropsToLocalRoute = (props: { [key: string]: number }) => {
+export const convertPropsToLocalRoute = (props: { [key: string]: number | string }) => {
   const propsKeys = Object.keys(props);
   const apiRoute = API.localPostsPath + props.page;
   return propsKeys.reduce((accumulator: string, key: string) => {

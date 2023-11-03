@@ -9,7 +9,7 @@ export default function Sidebar() {
   return (
     <div>
       <button className="btn-primary el-color-primary lg:hidden ml-4" onClick={() => setShowSidebar(!showSidebar)}>
-        <Bars3Icon className="icon-primary" />
+        <Bars3Icon className="icon-medium text-color-primary" />
       </button>
       <aside
         className={`h-20 bg-secondary flex justify-center items-center top-0 right-0 w-full fixed z-40 ease-in-out duration-300 ${
@@ -20,7 +20,7 @@ export default function Sidebar() {
           className="btn-primary el-color-primary lg:hidden ml-1 absolute left-2"
           onClick={() => setShowSidebar(!showSidebar)}
         >
-          <XMarkIcon className="icon-primary" />
+          <XMarkIcon className="icon-medium text-color-primary" />
         </button>
         <Categories />
       </aside>

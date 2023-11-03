@@ -28,8 +28,8 @@ export default function Post({ postId }: { postId: string }) {
       <ScrollToTop />
       <div className="grid grid-cols-3 gap-8 my-4 mx-6 xl:mx-0">
         <div className="relative col-span-3 lg:col-span-2">
-          <div className="block category-small lg:hidden">Coding</div>
-          <div className="block text-giant text-color-primary mb-4 lg:hidden">{parse(post.title.rendered)}</div>
+          <div className="category-small block lg:hidden">Coding</div>
+          <div className="text-giant text-color-primary block mb-4 lg:hidden">{parse(post.title.rendered)}</div>
           <picture className="relative">
             <PostImage imageData={imageData} />
             <div className="image-copyright">{imageData.title.rendered}</div>
@@ -37,8 +37,8 @@ export default function Post({ postId }: { postId: string }) {
           <div className="mt-6">
             <div className="post-date">{post.date.substring(0, 10)}</div>
           </div>
-          <div className="text-paragraph text-color-primary block">{parse(post.content.rendered)}</div>
-          <div className="flex items-center mt-6 text-paragraph">
+          <div className="text-medium text-color-primary block">{parse(post.content.rendered)}</div>
+          <div className="flex items-center mt-6 text-medium">
             <Tags tagIds={post.tags} />
           </div>
         </div>

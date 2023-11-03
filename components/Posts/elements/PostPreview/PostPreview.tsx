@@ -23,14 +23,14 @@ export default function PostPreview({ post }: { post: PostType }) {
           <div className="category-small">Coding</div>
           <div>{post.date.substring(0, 10)}</div>
         </div>
-        <div className="text-paragraph text-color-secondary block mt-6 mb-12">
+        <div className="text-medium text-color-secondary block mt-6 mb-12">
           {excerptLimited}
           <Link href={`/post/${post.slug}`} className="ml-2 link">
             Read more {">>"}
           </Link>
         </div>
         <div className="absolute bottom-6">
-          <div className="flex items-center justify-between text-paragraph">
+          <div className="flex items-center justify-between text-medium">
             <Tags tagIds={post.tags} />
           </div>
         </div>

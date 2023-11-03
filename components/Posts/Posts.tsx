@@ -18,11 +18,13 @@ export default function Posts(props: PostParamsType) {
 
   if (error) return <Report report={reports.error} />;
 
+  if (!data?.posts.length) return <Report report={reports.empty} />;
+
   return (
     <>
       {/* Unfortunately, even Next 14 require ScrollToTop for 100% scroll to top every time the page is turned */}
       <ScrollToTop />
-      <div className="flex flex-col my-4 gap-4 lg:gap-8 lg:grid lg:grid-cols-3">
+      <div className="flex flex-col my-4 gap-4 min-h-[70vh] lg:gap-8 lg:grid lg:grid-cols-3">
         {data!.posts.map((post: PostType, index: number) => {
           if (index === 0) {
             return <PostHero key={post.id} post={post} />;
