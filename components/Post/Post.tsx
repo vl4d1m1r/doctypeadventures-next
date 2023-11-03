@@ -53,13 +53,13 @@ export default function Post({ postId }: { postId: string }) {
           <div className="flex items-center mt-6 text-medium">
             <Tags tagIds={post.tags} />
           </div>
+          <FacebookComment dataHref={window.location.href} />
         </div>
         <div className="hidden lg:block">
           <Categories categoryId={post.categories[0]} />
           <div className="text-giant text-color-primary mt-6">{parse(post.title.rendered)}</div>
         </div>
       </div>
-      <FacebookComment dataHref={window.location.href} />
     </>
   );
 }
