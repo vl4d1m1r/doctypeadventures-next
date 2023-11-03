@@ -1,4 +1,6 @@
-[!DOCTYPE Adventures](https://doctypeadventures.netlify.com)
+[!DOCTYPE Adventures]
+https://doctypeadventures.vercel.app/
+https://doctypeadventures.netlify.com/ (I plan to deprecate Netlify domain for Next.js app)
 
 by Vladimir Jankovic
 
@@ -16,7 +18,7 @@ Blog and news content management system written in Next.js 14 (App router) power
 - Error and Not-found pages
 - Support for many different text types in posts
 
-You can check it out live at https://doctypeadventures.netlify.app
+You can check it out live at https://doctypeadventures.vercel.app/
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
@@ -35,6 +37,21 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Netlify build settings for Next.js app
+
+Out of the box builds of Next.js app on Netlify will fail because of the build settings.
+
+You can go to General settings -> Build & Deploy -> Continuous deployment -> Build settings and change variables to:
+
+Runtime: Next.js
+Base directory: /
+Package directory: Not set
+Build command: next build
+Publish directory: .next
+Functions directory: netlify/functions
+Deploy log visibility: Logs are public
+Build status: Active
 
 ## Prevent Node version error
 
