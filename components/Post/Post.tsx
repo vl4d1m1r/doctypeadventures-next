@@ -50,7 +50,7 @@ export default function Post({ postId }: { postId: string }) {
             <div className="post-date">{post.date.substring(0, 10)}</div>
           </div>
           <div className="text-medium text-color-primary block">{parse(post.content.rendered)}</div>
-          <div className="flex items-center mt-6 text-medium">
+          <div className="flex items-center my-6 text-medium">
             <Tags tagIds={post.tags} />
           </div>
           <FacebookComment dataHref={window.location.href} />
