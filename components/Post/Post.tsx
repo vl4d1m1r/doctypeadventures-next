@@ -1,6 +1,6 @@
 "use client";
 import useSWR from "swr";
-import { reports } from "@/models/constants";
+import Seo from "../Seo";
 import Report from "@/components/Report";
 import Tags from "@/components/Tags";
 import Categories from "../Categories";
@@ -8,7 +8,7 @@ import ScrollToTop from "../Posts/elements/ScrollToTop";
 import PostImage from "../Posts/elements/PostImage";
 import parse from "html-react-parser";
 import { ExtractPostData } from "@/controllers/utils";
-import { API } from "@/models/constants";
+import { API, reports, appData } from "@/models/constants";
 
 const fetcher = (path: string) => fetch(path).then((res) => res.json());
 
@@ -21,12 +21,20 @@ export default function Post({ postId }: { postId: string }) {
   if (error) return <Report report={reports.error} />;
 
   const post = data[0];
-  const { imageData } = ExtractPostData(post);
+  const { imageData, excerptLimited } = ExtractPostData(post, 700);
+
+  const seoData = {
+    title: parse(post.title.rendered) as string,
+    description: excerptLimited,
+    image: imageData.source_url,
+    url: API.appPath + API.localPostPath + postId,
+  };
 
   return (
     <>
       {/* Unfortunately, even Next 14 require ScrollToTop for 100% scroll to top every time the page is turned */}
       <ScrollToTop />
+      <Seo seoData={seoData} />
       <div className="grid grid-cols-3 gap-8 my-4 mx-6 xl:mx-0">
         <div className="relative col-span-3 lg:col-span-2">
           <div className="block lg:hidden">

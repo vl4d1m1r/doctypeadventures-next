@@ -1,10 +1,11 @@
 "use client";
 import useSWR from "swr";
+import Seo from "../Seo";
 import PostHero from "./elements/PostHero";
 import PostPreview from "./elements/PostPreview";
 import Pagination from "./elements/Pagination";
 import ScrollToTop from "./elements/ScrollToTop";
-import { reports } from "@/models/constants";
+import { reports, defaultSeo } from "@/models/constants";
 import Report from "@/components/Report";
 import { convertPropsToApiRoute } from "@/controllers/utils";
 import { postsFetcher } from "@/controllers/api";
@@ -24,6 +25,7 @@ export default function Posts(props: PostParamsType) {
     <>
       {/* Unfortunately, even Next 14 require ScrollToTop for 100% scroll to top every time the page is turned */}
       <ScrollToTop />
+      <Seo seoData={defaultSeo} />
       <div className="flex flex-col my-4 gap-4 min-h-[70vh] lg:gap-8 lg:grid lg:grid-cols-3">
         {data!.posts.map((post: PostType, index: number) => {
           if (index === 0) {

@@ -41,6 +41,13 @@ export type ReportPropType = {
   animation: string;
 };
 
+export type SeoDataType = {
+  title: string;
+  description: string;
+  image: string;
+  url: string;
+};
+
 export enum ReportTypes {
   LOADING = "loading",
   ERROR = "error",

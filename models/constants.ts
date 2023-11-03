@@ -9,12 +9,14 @@ export const API = {
   postsPath: `posts?_embed&per_page=${postsPerPage}&page=`,
   localPostsPath: "/posts/page/",
   postPath: "posts/?_embed&slug=",
+  localPostPath: "post/",
   appPath: "http://localhost:3000/",
   categoriesPath: "posts/page/1/categories/",
   categoriesSwrKey: "categories",
   tagsPath: "posts/page/1/tags/",
   tagsSwrKey: `tags?per_page=${tagsPerPage}`,
   searchPath: "posts/page/1/search/",
+  indexImage: "image.jpg",
 };
 
 export const settings = {
@@ -59,4 +61,11 @@ export const reports = {
     messages: ["PAGE IS BLANK! IT'S NOTHING THERE!!", "I'M SCARED MUTHA!!"],
     animation: `(╯°□°)╯`,
   },
+};
+
+export const defaultSeo = {
+  title: appData.name,
+  description: texts.tagline,
+  image: API.appPath + API.indexImage,
+  url: API.appPath,
 };
