@@ -8,4 +8,8 @@ module.exports = {
   images: {
     domains: ["vl4di11ir.pw"],
   },
+  future: {
+    webpack5: true,
+  },
+  target: "serverless",
 };

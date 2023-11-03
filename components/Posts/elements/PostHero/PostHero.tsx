@@ -24,7 +24,6 @@ export default function PostHero({ post }: { post: PostType }) {
           </Link>
           <div className="flex items-center justify-between mt-6">
             <Categories categoryId={post.categories[0]} />
-
             <div>{post.date.substring(0, 10)}</div>
           </div>
           <div className="text-medium text-color-secondary block mt-6">
