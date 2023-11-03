@@ -6,6 +6,7 @@ import Tags from "@/components/Tags";
 import Categories from "../Categories";
 import ScrollToTop from "../Posts/elements/ScrollToTop";
 import PostImage from "../Posts/elements/PostImage";
+import FacebookComment from "./elements/FacebookComment";
 import parse from "html-react-parser";
 import { ExtractPostData } from "@/controllers/utils";
 import { API, reports, appData } from "@/models/constants";
@@ -58,6 +59,7 @@ export default function Post({ postId }: { postId: string }) {
           <div className="text-giant text-color-primary mt-6">{parse(post.title.rendered)}</div>
         </div>
       </div>
+      <FacebookComment dataHref={window.location.href} />
     </>
   );
 }
