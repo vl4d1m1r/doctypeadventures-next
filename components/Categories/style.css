@@ -1,0 +1,22 @@
+@tailwind components;
+
+@layer components {
+  .category {
+    @apply px-4 py-2 font-bold;
+  }
+  .category-default {
+    @apply bg-blue-600 text-gray-50;
+  }
+  .category-Coding {
+    @apply bg-blue-600 text-gray-50;
+  }
+  .category-Design {
+    @apply bg-green-600 text-gray-50;
+  }
+  .category-Gaming {
+    @apply bg-cyan-700 text-gray-50;
+  }
+  .category-Security {
+    @apply bg-amber-700 text-gray-50;
+  }
+}

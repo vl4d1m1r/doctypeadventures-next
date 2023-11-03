@@ -72,9 +72,6 @@
   .image-copyright {
     @apply absolute rounded top-4 right-4 text-xs px-2 py-1 text-gray-50 bg-black/50;
   }
-  .category-small {
-    @apply px-4 py-2 bg-blue-600 text-gray-50 font-bold;
-  }
   .tag-small {
     @apply rounded text-xs px-2 py-1 mr-2 bg-blue-600 text-gray-50;
   }

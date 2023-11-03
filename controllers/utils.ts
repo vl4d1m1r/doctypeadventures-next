@@ -3,6 +3,7 @@ import { PostType } from "@/types/components";
 import parse from "html-react-parser";
 
 /*
+ *
  * This function converts props object (eg. { page: '1', categories: '2' }) to
  * an API route (eg. https://.../wp-json/wp/v2/posts/?_embed&slug=1&categories=2 )
  *
@@ -17,6 +18,7 @@ export const convertPropsToApiRoute = (props: { [key: string]: number | string }
 };
 
 /*
+ *
  * This function converts props object (eg. { page: '1', categories: '2' }) to
  * local API route (eg. /posts/page/1/categories/2 )
  *
@@ -29,6 +31,14 @@ export const convertPropsToLocalRoute = (props: { [key: string]: number | string
     return accumulator;
   }, apiRoute);
 };
+
+/*
+ *
+ * Function for deep cloning an Array
+ *
+ */
+export const deepCloneArray = (items: any) =>
+  items.map((item: any) => (Array.isArray(item) ? deepCloneArray(item) : item));
 
 export const ExtractPostData = (post: PostType, excerptLimit: number = 250) => {
   const imageData = post._embedded["wp:featuredmedia"][0];

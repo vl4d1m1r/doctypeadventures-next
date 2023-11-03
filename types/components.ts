@@ -16,6 +16,7 @@ export type PostType = {
   date: string;
   modified: string;
   tags: number[];
+  categories: number[];
   type: string;
   _embedded: {
     "wp:featuredmedia": [{ imageData: ImageDataType; source_url: string; title: { rendered: string } }];

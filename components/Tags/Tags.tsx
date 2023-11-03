@@ -2,6 +2,7 @@
 import useSWR from "swr";
 import Link from "next/link";
 import { Cog8ToothIcon } from "@heroicons/react/24/outline";
+import { FaceFrownIcon } from "@heroicons/react/24/outline";
 import { API } from "@/models/constants";
 import { TagType } from "@/types/components";
 import { fetcher } from "@/controllers/api";
@@ -11,9 +12,7 @@ export default function Tags({ tagIds }: { tagIds?: number[] }) {
 
   if (isLoading) return <Cog8ToothIcon className="w-6 h-6 animate-spin" />;
 
-  if (error) {
-    return <div>TAGS ARE FAILED MUTHA! THEY-RE FAILEEED!</div>;
-  }
+  if (error) return <FaceFrownIcon className="icon-large animate-bounce" />;
 
   let tags = data;
   let tagClass = "";

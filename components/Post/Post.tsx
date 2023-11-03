@@ -3,6 +3,7 @@ import useSWR from "swr";
 import { reports } from "@/models/constants";
 import Report from "@/components/Report";
 import Tags from "@/components/Tags";
+import Categories from "../Categories";
 import ScrollToTop from "../Posts/elements/ScrollToTop";
 import PostImage from "../Posts/elements/PostImage";
 import parse from "html-react-parser";
@@ -28,7 +29,9 @@ export default function Post({ postId }: { postId: string }) {
       <ScrollToTop />
       <div className="grid grid-cols-3 gap-8 my-4 mx-6 xl:mx-0">
         <div className="relative col-span-3 lg:col-span-2">
-          <div className="category-small block lg:hidden">Coding</div>
+          <div className="block lg:hidden">
+            <Categories categoryId={post.categories[0]} />
+          </div>
           <div className="text-giant text-color-primary block mb-4 lg:hidden">{parse(post.title.rendered)}</div>
           <picture className="relative">
             <PostImage imageData={imageData} />
@@ -43,7 +46,7 @@ export default function Post({ postId }: { postId: string }) {
           </div>
         </div>
         <div className="hidden lg:block">
-          <div className="category-small">Coding</div>
+          <Categories categoryId={post.categories[0]} />
           <div className="text-giant text-color-primary mt-6">{parse(post.title.rendered)}</div>
         </div>
       </div>

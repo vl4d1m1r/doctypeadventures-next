@@ -1,10 +1,10 @@
 import Link from "next/link";
 import Tags from "@/components/Tags";
+import Categories from "@/components/Categories";
 import PostImage from "../PostImage";
 import parse from "html-react-parser";
 import { ExtractPostData } from "@/controllers/utils";
 import { PostType } from "@/types/components";
-import { ChevronDoubleRightIcon } from "@heroicons/react/24/outline";
 
 export default function PostPreview({ post }: { post: PostType }) {
   const { imageData, excerptLimited } = ExtractPostData(post);
@@ -20,7 +20,7 @@ export default function PostPreview({ post }: { post: PostType }) {
           <h4 className="text-color-primary block">{parse(post.title.rendered)}</h4>
         </Link>
         <div className="flex items-center justify-between mt-6">
-          <div className="category-small">Coding</div>
+          <Categories categoryId={post.categories[0]} />
           <div>{post.date.substring(0, 10)}</div>
         </div>
         <div className="text-medium text-color-secondary block mt-6 mb-12">
@@ -30,7 +30,7 @@ export default function PostPreview({ post }: { post: PostType }) {
           </Link>
         </div>
         <div className="absolute bottom-6">
-          <div className="flex items-center justify-between text-medium">
+          <div className="flex items-center gap-2 flex-wrap text-medium">
             <Tags tagIds={post.tags} />
           </div>
         </div>

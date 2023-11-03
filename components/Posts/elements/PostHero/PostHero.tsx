@@ -1,12 +1,13 @@
 import Link from "next/link";
 import Tags from "@/components/Tags";
+import Categories from "@/components/Categories";
 import PostImage from "../PostImage";
 import parse from "html-react-parser";
 import { ExtractPostData } from "@/controllers/utils";
 import { PostType } from "@/types/components";
 
 export default function PostHero({ post }: { post: PostType }) {
-  const { imageData, excerptLimited } = ExtractPostData(post, 800);
+  const { imageData, excerptLimited } = ExtractPostData(post, 700);
 
   return (
     <>
@@ -22,7 +23,8 @@ export default function PostHero({ post }: { post: PostType }) {
             <h4 className="text-color-primary block">{parse(post.title.rendered)}</h4>
           </Link>
           <div className="flex items-center justify-between mt-6">
-            <div className="category-small">Coding</div>
+            <Categories categoryId={post.categories[0]} />
+
             <div>{post.date.substring(0, 10)}</div>
           </div>
           <div className="text-medium text-color-secondary block mt-6">
