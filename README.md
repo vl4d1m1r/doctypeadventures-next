@@ -9,12 +9,10 @@ Blog and news content management system written in Next.js 14 (App router) power
 - Mobile first & fluid design, adapts to all devices and screen sizes
 - Full SEO optimization
 - Dark and light theme hot-switching
-- Social sharing integration (Facebook and Twitter)
-- Facebook comments plugin for individual posts integration
 - Searchable content
 - Lighting fast pagination
 - Complete support for categories and tags
-- Pre-loaders and skeletons for everything that loads :)
+- loading layouts and animations
 - Error and Not-found pages
 - Support for many different text types in posts
 

@@ -1,12 +1,11 @@
 "use client";
 import useSWR from "swr";
-import Seo from "../Seo";
+import Seo from "../SEO";
 import Report from "@/components/Report";
 import Tags from "@/components/Tags";
 import Categories from "../Categories";
 import ScrollToTop from "../Posts/elements/ScrollToTop";
 import PostImage from "../Posts/elements/PostImage";
-import FacebookComment from "./elements/FacebookComment";
 import parse from "html-react-parser";
 import { ExtractPostData } from "@/controllers/utils";
 import { API, reports, appData } from "@/models/constants";
@@ -53,7 +52,6 @@ export default function Post({ postId }: { postId: string }) {
           <div className="flex items-center my-6 text-medium">
             <Tags tagIds={post.tags} />
           </div>
-          <FacebookComment dataHref={window.location.href} />
         </div>
         <div className="hidden lg:block">
           <Categories categoryId={post.categories[0]} />
