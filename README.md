@@ -1,5 +1,7 @@
 [!DOCTYPE Adventures]
+
 https://doctypeadventures.vercel.app/
+
 https://doctypeadventures.netlify.com/ (I plan to deprecate Netlify domain for Next.js app)
 
 by Vladimir Jankovic
@@ -60,7 +62,9 @@ NODE_VERSION = 20.9.0
 ## Prevent 404 error on serverless hosting
 
 If you are on serverless hosting, you must add \_redirects file in public folder with content:
+
 /\* /index.html 200
+
 to prevent 404 error
 
 ## Environment variables
@@ -68,6 +72,7 @@ to prevent 404 error
 There is only one environment variable:
 
 `.env.local`
+
 DOMAIN=http://localhost:3000/ (for development, or domain on host server)
 
 Please note: in Next.js 14 it is not enough to put this value in .env.local. You need to update next.config.js with:
