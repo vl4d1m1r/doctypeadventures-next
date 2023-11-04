@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import GoogleIntegration from "@/components/SEO/integrations/GoogleIntegration";
+import GoogleIntegration from "@/components/Seo/integrations/GoogleIntegration";
 import { ThemeProvider } from "./theme-provider";
 import "./globals.css";
 

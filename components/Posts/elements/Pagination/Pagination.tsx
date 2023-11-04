@@ -21,7 +21,7 @@ export default function Pagination({ currentPage, totalPages, filter }: Paginati
             className={item.style}
             disabled={item.disabled}
           >
-            <item.icon className="icon-medium text-color-primary" />
+            <item.icon className="icon-medium" />
           </button>
         );
       })}
