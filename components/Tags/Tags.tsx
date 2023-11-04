@@ -28,7 +28,7 @@ export default function Tags({ tagIds }: { tagIds?: number[] }) {
       {tags.map((tag: TagType) => {
         if (tag.count) {
           return (
-            <Link key={tag.id} href={API.appPath + API.tagsPath + tag.id} className={tagClass}>
+            <Link key={tag.id} href={process.env.DOMAIN + API.tagsPath + tag.id} className={tagClass}>
               {tag.name}
             </Link>
           );

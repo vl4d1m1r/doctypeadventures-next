@@ -27,7 +27,7 @@ export default function Post({ postId }: { postId: string }) {
     title: parse(post.title.rendered) as string,
     description: excerptLimited,
     image: imageData.source_url,
-    url: API.appPath + API.localPostPath + postId,
+    url: process.env.DOMAIN + API.localPostPath + postId,
   };
 
   return (

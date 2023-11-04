@@ -33,7 +33,7 @@ export default function Categories({ categoryId }: { categoryId?: number }) {
               // category-default is fallback because of the Next - Tailwind inability to process dynamic definitions
               className={isSingleCategory ? `category category-default category-${category.name}` : "category"}
             >
-              <Link href={API.appPath + API.categoriesPath + category.id}>{category.name}</Link>
+              <Link href={process.env.DOMAIN + API.categoriesPath + category.id}>{category.name}</Link>
             </div>
           );
         }

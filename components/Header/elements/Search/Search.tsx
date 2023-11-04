@@ -8,7 +8,7 @@ export default function Search() {
   const handleSearch = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key !== "Enter") return;
     const inputElement = e.target as HTMLInputElement; // For Typescript sake!
-    router.push(API.appPath + API.searchPath + inputElement.value);
+    router.push(process.env.DOMAIN + API.searchPath + inputElement.value);
   };
 
   return (

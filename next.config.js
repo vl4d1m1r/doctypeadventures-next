@@ -8,4 +8,7 @@ module.exports = {
   images: {
     domains: ["vl4di11ir.pw"],
   },
+  env: {
+    DOMAIN: process.env.DOMAIN,
+  },
 };
