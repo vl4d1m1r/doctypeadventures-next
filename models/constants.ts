@@ -65,6 +65,6 @@ export const reports = {
 export const defaultSeo = {
   title: appData.name,
   description: texts.tagline,
-  image: process.env.DOMAIN + API.indexImage,
-  url: process.env.DOMAIN,
+  image: process.env.DOMAIN! + API.indexImage,
+  url: process.env.DOMAIN!,
 };
