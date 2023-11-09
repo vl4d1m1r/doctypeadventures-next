@@ -1,12 +1,13 @@
 import { ReportPropType, ReportTypes } from "@/types/components";
 import Modal from "../Modal";
 import PostSkeleton from "./elements/PostSkeleton";
+import "./styles.css";
 
 export default function Report({ report }: { report: ReportPropType }) {
   return (
     <>
       {report.type === ReportTypes.LOADING ? (
-        <div className="flex flex-col my-4 items-center gap-4 lg:gap-8 lg:grid lg:grid-cols-3">
+        <div className="report-skeleton-wrapper">
           {[...Array(6)].map((value, index) => {
             // In this case of repeating same n elements it is allowed to use index as a key
             return <PostSkeleton key={index} />;
@@ -16,7 +17,7 @@ export default function Report({ report }: { report: ReportPropType }) {
         <div className="h-screen"></div>
       )}
       <Modal>
-        <div className="flex flex-col items-center space-y-4">
+        <div className="report-modal">
           {report.messages.map((message: string) => {
             return (
               <div key={message} className="text-sm">

@@ -1,0 +1,13 @@
+@tailwind components;
+
+@layer components {
+  .modal {
+    @apply fixed left-0 top-0 flex h-full w-full items-center justify-center bg-black bg-opacity-50 py-10;
+  }
+  .modal-box {
+    @apply max-h-full max-w-xl overflow-y-auto sm:rounded-2xl bg-white;
+  }
+  .modal-text {
+    @apply p-4 text-black;
+  }
+}

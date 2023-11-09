@@ -1,0 +1,10 @@
+@tailwind components;
+
+@layer components {
+  .report-skeleton-wrapper {
+    @apply flex flex-col my-4 items-center gap-4 sm:grid sm:gap-8 sm:grid-cols-2 lg:grid-cols-3;
+  }
+  .report-modal {
+    @apply flex flex-col items-center space-y-4;
+  }
+}

@@ -10,7 +10,7 @@ export default function PostPreview({ post }: { post: PostType }) {
   const { imageData, excerptLimited } = ExtractPostData(post);
 
   return (
-    <div className="bg-primary h-full relative flex flex-col rounded-xl shadow-md">
+    <div className="preview-wrapper">
       <picture>
         <PostImage imageData={imageData} />
         <div className="image-copyright">{imageData.title.rendered}</div>
@@ -19,18 +19,18 @@ export default function PostPreview({ post }: { post: PostType }) {
         <Link href={`/post/${post.slug}`} className="hover:underline">
           <h4 className="text-color-primary block">{parse(post.title.rendered)}</h4>
         </Link>
-        <div className="flex items-center justify-between mt-6">
+        <div className="preview-category">
           <Categories categoryId={post.categories[0]} />
           <div>{post.date.substring(0, 10)}</div>
         </div>
-        <div className="text-medium text-color-secondary block mt-6 mb-12">
+        <div className="preview-excerpt">
           {excerptLimited}
           <Link href={`/post/${post.slug}`} className="ml-2 link">
             Read more {">>"}
           </Link>
         </div>
         <div className="absolute bottom-6">
-          <div className="flex items-center gap-2 flex-wrap text-medium">
+          <div className="preview-tags">
             <Tags tagIds={post.tags} />
           </div>
         </div>

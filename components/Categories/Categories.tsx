@@ -24,7 +24,7 @@ export default function Categories({ categoryId }: { categoryId?: number }) {
   const isSingleCategory = categories.length === 1;
 
   return (
-    <div className="font-medium mt-0 lg:flex lg:flex-row lg:space-x-8 ">
+    <div id="categories" className="categories">
       {categories.map((category: CategoryType) => {
         if (category.count) {
           return (

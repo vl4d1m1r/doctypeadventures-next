@@ -35,12 +35,12 @@ export default function Post({ postId }: { postId: string }) {
       {/* Unfortunately, even Next 14 require ScrollToTop for 100% scroll to top every time the page is turned */}
       <ScrollToTop />
       <Seo seoData={seoData} />
-      <div className="grid grid-cols-3 gap-8 my-4 mx-6 xl:mx-0">
-        <div className="relative col-span-3 lg:col-span-2">
+      <div className="post-wrapper">
+        <div className="post-body">
           <div className="block lg:hidden">
             <Categories categoryId={post.categories[0]} />
           </div>
-          <div className="text-giant text-color-primary block mb-4 lg:hidden">{parse(post.title.rendered)}</div>
+          <div className="post-title">{parse(post.title.rendered)}</div>
           <picture className="relative">
             <PostImage imageData={imageData} />
             <div className="image-copyright">{imageData.title.rendered}</div>
@@ -48,14 +48,14 @@ export default function Post({ postId }: { postId: string }) {
           <div className="mt-6">
             <div className="post-date">{post.date.substring(0, 10)}</div>
           </div>
-          <div className="text-medium text-color-primary block">{parse(post.content.rendered)}</div>
-          <div className="flex items-center mt-6 text-medium">
+          <article className="post-content">{parse(post.content.rendered)}</article>
+          <div className="post-tags">
             <Tags tagIds={post.tags} />
           </div>
         </div>
         <div className="hidden lg:block">
           <Categories categoryId={post.categories[0]} />
-          <div className="text-giant text-color-primary mt-6">{parse(post.title.rendered)}</div>
+          <div className="post-title-lg">{parse(post.title.rendered)}</div>
         </div>
       </div>
     </>
