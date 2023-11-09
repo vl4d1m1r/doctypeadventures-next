@@ -2,7 +2,7 @@
 
 https://doctypeadventures.vercel.app/
 
-https://doctypeadventures.netlify.com/ (I plan to deprecate Netlify domain for Next.js app)
+https://doctypeadventures.netlify.com/ (I am planning to deprecate Netlify domain for Next.js app)
 
 by Vladimir Jankovic
 
