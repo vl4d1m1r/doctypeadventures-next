@@ -44,21 +44,16 @@ Out of the box builds of Next.js app on Netlify will fail because of the build s
 
 You can go to General settings -> Build & Deploy -> Continuous deployment -> Build settings and change variables to:
 
+```bash
 Runtime: Next.js
-
 Base directory: /
-
 Package directory: Not set
-
 Build command: next build
-
 Publish directory: .next
-
 Functions directory: netlify/functions
-
 Deploy log visibility: Logs are public
-
 Build status: Active
+```
 
 ## Prevent Node version error
 
