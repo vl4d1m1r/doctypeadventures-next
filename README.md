@@ -14,7 +14,7 @@ Blog and news content management system written in Next.js 14 (App router) power
 - Searchable content
 - Lighting fast pagination
 - Complete support for categories and tags
-- loading layouts and animations
+- Dedicated loading layouts and animations
 - Error and Not-found pages
 - Support for many different text types in posts
 
@@ -45,12 +45,19 @@ Out of the box builds of Next.js app on Netlify will fail because of the build s
 You can go to General settings -> Build & Deploy -> Continuous deployment -> Build settings and change variables to:
 
 Runtime: Next.js
+
 Base directory: /
+
 Package directory: Not set
+
 Build command: next build
+
 Publish directory: .next
+
 Functions directory: netlify/functions
+
 Deploy log visibility: Logs are public
+
 Build status: Active
 
 ## Prevent Node version error
@@ -89,7 +96,7 @@ This app gets it's blog content from [Wordpress API](https://developer.wordpress
 
 MIT License
 
-Copyright (c) 2021 Vladimir Jankovic
+Copyright (c) 2023 Vladimir Jankovic
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
