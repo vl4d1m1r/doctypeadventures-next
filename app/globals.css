@@ -5,7 +5,7 @@
 @layer components {
   /* Global */
   .wrapper {
-    @apply mx-auto max-w-screen-xl min-w-[412px];
+    @apply mx-auto max-w-screen-xl;
   }
   .btn-primary {
     @apply rounded text-sm justify-center p-2 inline-flex items-center focus:outline-none focus:ring-2 border;
@@ -70,6 +70,30 @@
   .h-align {
     @apply flex items-center space-x-4;
   }
+
+  /* Header */
+  .header {
+    @apply fixed top-0 left-0 right-0 z-10;
+  }
+  .header-nav {
+    @apply wrapper bg-primary border-b p-4 flex items-center flex-wrap justify-between;
+  }
+  .header-categories {
+    @apply hidden items-center w-full lg:flex lg:w-auto lg:order-2;
+  }
+  .logo {
+    @apply hidden h-10 w-auto md:block;
+  }
+  .logo-circle {
+    @apply w-12 h-12 rounded-full;
+  }
+  .logo-text-dark {
+    @apply hidden h-10 w-auto dark:block;
+  }
+  .logo-text-light {
+    @apply h-10 w-auto dark:hidden;
+  }
+
   /* Posts */
   .image-copyright {
     @apply absolute rounded top-4 right-4 text-xs px-2 py-1 text-gray-50 bg-black/50;
@@ -77,10 +101,12 @@
   .post-date {
     @apply text-blue-600 font-bold;
   }
+
   /* Tags */
   .tag-small {
     @apply rounded text-xs px-2 py-1 mr-2 bg-blue-600 text-gray-50;
   }
+
   /* Footer */
   .tooltip-disclaimer {
     @apply tooltip overflow-auto -top-[310px] group-hover:h-[350px] group-hover:w-[350px];
