@@ -22,7 +22,7 @@ export default function PostImage() {
             {texts.rant}
             <span className="group relative">
               <button className="text-blue-600">{texts.rantDisclaimer}</button>
-              <span className="tooltip -top-[400px] w-[600px]">{texts.disclaimer}</span>
+              <div className="tooltip-disclaimer">{texts.disclaimer}</div>
             </span>
           </div>
         </div>
