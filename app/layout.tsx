@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import GoogleIntegration from "@/components/Seo/integrations/GoogleIntegration";
@@ -16,6 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Footer />
           </>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
