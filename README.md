@@ -1,9 +1,5 @@
 [!DOCTYPE Adventures]
 
-https://doctypeadventures.vercel.app/
-
-https://doctypeadventures.netlify.com/ (I am planning to deprecate Netlify domain for Next.js app)
-
 by Vladimir Jankovic
 
 Blog and news content management system written in Next.js 14 (App router) powered with Typescript and Tailwind. It uses Wordpress API for content delivery, Netlify for hosting and automatic deployment and Git and Github for version control and as repository container. !DOCTYPE Adventures blog CMS is free to use (under MIT license) and feature:
