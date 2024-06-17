@@ -79,9 +79,37 @@ Please note: in Next.js 14 it is not enough to put this value in .env.local. You
     DOMAIN: process.env.DOMAIN,
 },`
 
+## Dealing with the CORS error
+
+Sometimes (depending on your server) the WordPress REST API fetch will result in `CORS` error when you're trying to reach it from `localhost:3000`. For development purposes, you can overcome this issue by running the Chrome browser without security (It is most secure if you do it from the sandbox, even if you only go to `localhost:3000`):
+
+- Press `Windows key` + `R`
+- Type: `chrome.exe --user-data-dir="C://Chrome dev session" --disable-web-security`
+
 ## Wordpress API
 
 This app gets it's blog content from [Wordpress API](https://developer.wordpress.org/rest-api/) which means that you must host Wordpress installation somewhere. The free plan on Wordpress.com website will NOT do the trick because of (in the time of writing) the obsolete api version used.
+
+## Wordpress API caveats
+
+Sometimes, altough installed properly and working, reaching the WordPress API on adress `https://yourwpdomain/wp-json/wp/v2` will result in 404 error. Here is what you can do:
+
+- You can insert `index.php` into WordPress REST API endpoint and it will fix 404 error: `https://vl4di11ir.pw/doctypeadventures/index.php/wp-json/wp/v2`.
+- Or you can just go to WordPress SETTINGS, click on PERMALINKS, then choose 'Plain' (and click on save changes), then return to your real permalink choice (mine was 'Day and name'), click on save changes, and error 404 will dissapear and your WordPress REST API endpoint will work as it is, without `index.php` insertion.
+
+## Backing up the Wordpress database manually
+
+- First you need to go to PHP MyAdmin, run it, click on the WordPress database, and click on EXPORT. Choose SQL format. It should result in creating the `some-name.sql` file.
+- Copy whole WordPress installation folder from your server (prefferably in a ZIP file). What you need the most is the folder: `wp-content\uploads`.
+
+## Restoring the WordPress database
+
+- On your server create new blank database table with username and password.
+- Enter your new database, click IMPORT. Choose your backup stored in the `some-name.sql` file.
+- Install new clean version of WordPress, pointing it (during the installation with credentials) to the new database where you restored your backup.
+- Finish installation proces, start the WordPress. All posts should be there except images.
+- Copy your backed up `wp-content\uploads` folder to you WordPress instalaltion `wp-content\uploads` folder.
+- Now the pictures also should be here and restoration of previous WordPress installation is complete.
 
 ## Copyright Information
 
